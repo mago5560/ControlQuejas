@@ -1,0 +1,89 @@
+<h2 mat-dialog-title style="text-align: center">{{ tituloForm }}</h2>
+<mat-dialog-content [formGroup]="frm">
+  <div>
+    <button
+      type="button"
+      class="btn btn"
+      style="float: right; margin: 2xp"
+      (click)="cerrar()"
+    >
+      <mat-icon>close</mat-icon>
+    </button>
+  </div>
+  <br />
+  <div class="container">
+    <div class="row">
+      <mat-form-field class="col-7" appearance="standard" required>
+        <mat-label>Nombre</mat-label>
+        <input
+          matInput
+          placeholder="Ingrese el nombre de la sucursal"
+          type="text"
+          name="nombre"
+          formControlName="nombre"
+        />
+      </mat-form-field>
+
+      <mat-form-field class="col-5" appearance="standard" required>
+        <mat-label>Telefono</mat-label>
+        <input
+          matInput
+          placeholder="Ingrese el telefono de la sucursal"
+          type="number"
+          name="telefono"
+          formControlName="telefono"
+        />
+      </mat-form-field>
+    </div>
+    <div class="row">
+      <mat-form-field class="col-7" appearance="standard" required>
+        <mat-label>Direccion</mat-label>
+        <input
+          matInput
+          placeholder="Ingrese el direccion de la sucursal"
+          type="text"
+          name="direccion"
+          formControlName="direccion"
+        />
+      </mat-form-field>
+
+      <button
+        type="button"
+        class="btn btn-light-success col-5"
+        (click)="addItem()"
+      >
+        <span>Grabar</span>
+      </button>
+    </div>
+  </div>
+
+  <div class="content">
+    <mat-list class="mat-elevation-z8">
+      <div mat-subheader>Sucursal</div>
+      <mat-list-item *ngFor="let element of _DataDetalle">
+        <div mat-line>
+          {{ element.nombre + "  Tel.: " + element.telefono }}
+        </div>
+        <div mat-line>
+          {{ "Dir.:" + element.direccion }}
+        </div>
+        <div mat-line>
+          <button
+            type="button"
+            class="btn btn-outline-primary btn_pading"
+            (click)="modificar(element)"
+          >
+            <mat-icon><span class="material-icons">mode_edit</span></mat-icon>
+          </button>
+          <button
+            type="button"
+            class="btn btn-outline-danger btn_pading"
+            (click)="eliminar(element)"
+          >
+            <mat-icon><span class="material-icons">delete</span></mat-icon>
+          </button>
+        </div>
+      </mat-list-item>
+    </mat-list>
+  </div>
+</mat-dialog-content>

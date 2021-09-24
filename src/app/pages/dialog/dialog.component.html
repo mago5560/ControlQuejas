@@ -1,0 +1,26 @@
+<h1 mat-dialog-title>{{ data.titulo }}</h1>
+<div mat-dialog-content>
+  <p>{{ data.mensaje }}</p>
+
+  <div>
+    <button
+      type="button"
+      class="btn btn-outline-danger btn_pading"
+      style="float: left"
+      (click)="cerrarDialogo()"
+      cdkFocusInitial
+    >
+      No
+    </button>
+
+    <button
+      type="button"
+      class="btn btn-outline-success btn_pading"
+      (click)="confirmado()"
+      style="float: right"
+    >
+      Sí
+    </button>
+  </div>
+</div>
+<!--<div mat-dialog-actions></div>-->

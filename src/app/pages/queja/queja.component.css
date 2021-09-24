@@ -1,0 +1,22 @@
+.mat-icon {
+  vertical-align: middle;
+}
+
+.text-aling {
+  vertical-align: middle;
+}
+
+.body {
+  display: flex;
+  justify-content: center;
+  height: 90%;
+  align-items: center;
+  /*background-color: #f5f5f5;*/
+}
+
+.formCard {
+  width: 100%;
+  max-width: 330px;
+  text-align: center;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}

@@ -1,0 +1,81 @@
+<h2 mat-dialog-title style="text-align: center">{{ tituloForm }}</h2>
+<mat-dialog-content [formGroup]="frm">
+  <mat-form-field appearance="standard" [style.width.%]="100">
+    <mat-label>Nombre</mat-label>
+    <input
+      matInput
+      placeholder="Ingrese el primer y segundo nombre"
+      type="text"
+      name="nombre"
+      formControlName="nombre"
+    />
+  </mat-form-field>
+
+  <mat-form-field appearance="standard" [style.width.%]="100">
+    <mat-label>Apellido</mat-label>
+    <input
+      matInput
+      placeholder="Ingrese el primero y segundo apellido"
+      type="text"
+      name="apellido"
+      formControlName="apellido"
+    />
+  </mat-form-field>
+
+  <mat-form-field appearance="standard" [style.width.%]="100">
+    <mat-label>Telefono</mat-label>
+    <input
+      matInput
+      placeholder="Ingrese el telefono"
+      type="number"
+      name="telefono"
+      formControlName="telefono"
+    />
+  </mat-form-field>
+
+  <mat-form-field appearance="standard" [style.width.%]="100">
+    <mat-label>Direccion</mat-label>
+    <input
+      matInput
+      placeholder="Ingrese el telefono"
+      type="text"
+      name="direccion"
+      formControlName="direccion"
+    />
+  </mat-form-field>
+
+  <mat-form-field appearance="standard" [style.width.%]="100">
+    <mat-label>Contraseña</mat-label>
+    <input
+      matInput
+      placeholder="Ingrese el telefono"
+      type="text"
+      name="contraseña"
+      formControlName="contraseña"
+    />
+  </mat-form-field>
+  <div style="float: right">
+    <mat-slide-toggle name="activo" formControlName="activo">
+      Usuario Activo
+    </mat-slide-toggle>
+  </div>
+  <br /><br /><br />
+  <button
+    type="button"
+    class="btn btn-outline-success"
+    color="primary"
+    style="float: right; margin: 2xp"
+    (click)="addItem()"
+  >
+    <span>Grabar</span>
+  </button>
+  <button
+    type="button"
+    class="btn btn-outline-danger"
+    color="warn"
+    style="float: left; margin: 2xp"
+    (click)="cerrar()"
+  >
+    <span>Cancelar</span>
+  </button>
+</mat-dialog-content>

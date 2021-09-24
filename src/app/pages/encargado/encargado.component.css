@@ -1,0 +1,25 @@
+.content {
+  margin: 2vh;
+}
+
+/* Structure */
+table {
+  width: 100%;
+}
+
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
+.btn_pading {
+  margin: 2%;
+}
+
+.mat-icon {
+  vertical-align: middle;
+}
+
+.item_center {
+  vertical-align: middle;
+}

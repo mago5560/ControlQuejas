@@ -1,0 +1,114 @@
+<nav class="navbar" *ngIf="!storageService.isAuthenticated()">
+  <div class="container-fluid">
+    <div class="navbar-header"></div>
+
+    <div class="nav navbar-nav"></div>
+
+    <div class="nav navbar-nav navbar-right">
+      <button
+        type="button"
+        class="btn btn-outline-primary btn-sm"
+        (click)="ingresar()"
+      >
+        <mat-icon>login</mat-icon> <span class="text-aling">Ingresar</span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<div class="body">
+  <div class="formCard">
+    <div class="aligner">
+      <mat-card class="aligner-center-item">
+        <!--<mat-card-title>
+          <img src="assets/_quejas.png" width="70%" />
+        </mat-card-title>-->
+        <mat-card-content>
+          <form [formGroup]="frm">
+            <div class="row">
+              <mat-form-field appearance="standard" class="col-6">
+                <mat-label>Seleccione Departamento</mat-label>
+                <mat-select
+                  formControlName="departamento"
+                  (selectionChange)="onChangeDepartamento()"
+                  name="departamento"
+                  required
+                >
+                  <mat-option
+                    *ngFor="let c of _sourceDepartamento"
+                    [value]="c.id"
+                  >
+                    {{ c.nombre }}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+
+              <mat-form-field appearance="standard" class="col-6">
+                <mat-label>Seleccione Municipio</mat-label>
+                <mat-select
+                  formControlName="municipio"
+                  name="municipio"
+                  (selectionChange)="onChangeMunicipio()"
+                  required
+                >
+                  <mat-option *ngFor="let c of _sourceMunicipio" [value]="c.id">
+                    {{ c.nombre }}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+            <div class="row">
+              <mat-form-field appearance="standard" class="col-6">
+                <mat-label>Seleccione Comercio</mat-label>
+                <mat-select
+                  (selectionChange)="onChangeComercio()"
+                  formControlName="comercio"
+                  name="comercio"
+                  required
+                >
+                  <mat-option *ngFor="let c of _sourceComercio" [value]="c.id">
+                    {{ c.nombre }}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+              <mat-form-field appearance="standard" class="col-6">
+                <mat-label>Sucursal</mat-label>
+                <mat-select formControlName="sucursal" name="sucursal" required>
+                  <mat-option *ngFor="let c of _sourceSucursal" [value]="c.id">
+                    {{ c.nombre }}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+
+            <mat-form-field [style.width.%]="100">
+              <mat-label
+                >Ingrese sus Comentarios, Sujerencias o Queja</mat-label
+              >
+              <textarea
+                matInput
+                formControlName="observaciones"
+                name="observaciones"
+                #message
+                maxlength="300"
+                rows="15"
+              ></textarea>
+              <mat-hint align="end">{{ message.value.length }} / 300</mat-hint>
+            </mat-form-field>
+          </form>
+        </mat-card-content>
+        <mat-card-actions>
+          <div class="d-grid gap-2 col-15 mx-auto">
+            <button
+              (click)="grabar()"
+              class="btn btn-outline-success"
+              type="button"
+            >
+              Grabar
+            </button>
+          </div>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
+</div>

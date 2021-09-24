@@ -1,0 +1,181 @@
+<nav class="navbar navbar-light">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <form class="form-inline">
+        <div class="form-group">
+          <button type="button" class="btn btn btn-sm" routerLink="/home">
+            <mat-icon>home</mat-icon>
+            <span class="text-aling">Inicio</span>
+          </button>
+
+          <button
+            type="button"
+            class="btn btn btn-sm"
+            [matMenuTriggerFor]="menu"
+          >
+            <mat-icon>widgets</mat-icon>
+            <span class="text-aling">Maestro</span>
+            <mat-icon>arrow_drop_down</mat-icon>
+          </button>
+          <mat-menu #menu="matMenu">
+            <form class="form-inline">
+              <div class="form-group">
+                <button
+                  type="button"
+                  class="btn btn btn-sm"
+                  routerLink="/region"
+                >
+                  <mat-icon>arrow_right</mat-icon>
+                  <span class="text-aling">Region</span>
+                </button>
+              </div>
+              <div class="form-group">
+                <button
+                  type="button"
+                  class="btn btn btn-sm"
+                  routerLink="/departamento"
+                >
+                  <mat-icon>arrow_right</mat-icon>
+                  <span class="text-aling">Departamento</span>
+                </button>
+              </div>
+              <div class="form-group">
+                <button
+                  type="button"
+                  class="btn btn-outline btn-sm"
+                  routerLink="/municipio"
+                >
+                  <mat-icon>arrow_right</mat-icon>
+                  <span class="text-aling">Municipio</span>
+                </button>
+              </div>
+              <div class="form-group">
+                <button
+                  type="button"
+                  class="btn btn btn-sm"
+                  routerLink="/encargado"
+                >
+                  <mat-icon>arrow_right</mat-icon>
+                  <span class="text-aling">Encargado</span>
+                </button>
+              </div>
+              <div class="form-group">
+                <button
+                  type="button"
+                  class="btn btn btn-sm"
+                  routerLink="/comercio"
+                >
+                  <mat-icon>arrow_right</mat-icon>
+                  <span class="text-aling">Comercio</span>
+                </button>
+              </div>
+              <div class="form-group">
+                <button
+                  type="button"
+                  class="btn btn btn-sm"
+                  routerLink="/usuario"
+                >
+                  <mat-icon>arrow_right</mat-icon>
+                  <span class="text-aling">Usuarios</span>
+                </button>
+              </div>
+            </form>
+          </mat-menu>
+
+          <button type="button" class="btn btn btn-sm" routerLink="/queja">
+            <mat-icon>create</mat-icon>
+            <span class="text-aling">Queja</span>
+          </button>
+        </div>
+      </form>
+    </div>
+
+    <div class="nav navbar-nav">
+      <a class="text-aling navbar-brand">{{
+        storageService.getTitelNavBar()
+      }}</a>
+    </div>
+
+    <div class="nav navbar-nav navbar-right">
+      <button
+        type="button"
+        class="btn btn btn-sm"
+        (click)="storageService.logout()"
+      >
+        <mat-icon>logout</mat-icon> <span class="text-aling">Salir</span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!--Diseño usando material design-->
+<!--
+<div class="example-container">
+  <mat-toolbar class="example-toolbar">
+    <button type="button" class="btn btn" (click)="sidenav.toggle()">
+      <mat-icon *ngIf="!sidenav.opened">menu</mat-icon>
+      <mat-icon *ngIf="sidenav.opened">close</mat-icon>
+    </button>
+
+    <h1 class="example-app-name">Free Software "LAMG"</h1>
+
+    <span class="example-spacer"></span>
+
+    <button type="button" class="btn btn" (click)="salir()">
+      <mat-icon>logout</mat-icon> <span class="text-aling">Salir</span>
+    </button>
+
+    <mat-menu> </mat-menu>
+  </mat-toolbar>
+
+  <mat-sidenav-container>
+    <mat-sidenav opened="true" #sidenav>
+      <img src="" width="128" style="margin-left: 20px" />
+      <ng-container>
+        <button
+          mat-menu-item
+          (click)="sidenav.toggle()"
+          style="cursor: pointer"
+        >
+          <mat-icon>person</mat-icon>
+          <span>Persona</span>
+        </button>
+        <mat-divider></mat-divider>
+        <button
+          mat-menu-item
+          (click)="sidenav.toggle()"
+          routerLink="/comandas"
+          style="cursor: pointer"
+        >
+          <mat-icon>soup_kitchen</mat-icon>
+          <span>Comandas</span>
+        </button>
+        <mat-divider></mat-divider>
+        <button
+          mat-menu-item
+          (click)="sidenav.toggle()"
+          routerLink="/envios"
+          style="cursor: pointer"
+        >
+          <mat-icon>moped</mat-icon>
+          <span>Envíos</span>
+        </button>
+        <mat-divider></mat-divider>
+        <button
+          mat-menu-item
+          (click)="sidenav.toggle()"
+          routerLink="/orden"
+          style="cursor: pointer"
+        >
+          <mat-icon>receipt_long</mat-icon>
+          <span>Orden</span>
+        </button>
+      </ng-container>
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+      <div class="container-dashboard"></div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>
+-->

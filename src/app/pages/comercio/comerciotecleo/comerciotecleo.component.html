@@ -1,0 +1,64 @@
+<h2 mat-dialog-title style="text-align: center">{{ tituloForm }}</h2>
+<mat-dialog-content [formGroup]="frm">
+  <mat-form-field appearance="standard" [style.width.%]="100">
+    <mat-label>Seleccione Departamento</mat-label>
+    <mat-select
+      formControlName="departamento"
+      (selectionChange)="onChangeDepartamento()"
+      name="departamento"
+      required
+    >
+      <mat-option *ngFor="let c of _sourceDepartamento" [value]="c.id">
+        {{ c.nombre }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field appearance="standard" [style.width.%]="100">
+    <mat-label>Seleccione Municipio</mat-label>
+    <mat-select formControlName="municipio" name="municipio" required>
+      <mat-option *ngFor="let c of _sourceMunicipio" [value]="c.id">
+        {{ c.nombre }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field appearance="standard" [style.width.%]="100" required>
+    <mat-label>Seleccione Encargado</mat-label>
+    <mat-select formControlName="encargado" name="encargado">
+      <mat-option *ngFor="let c of _sourceEncargado" [value]="c.id">
+        {{ c.nombre + " " + c.apellido }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field appearance="standard" [style.width.%]="100">
+    <mat-label>Nombre</mat-label>
+    <input
+      matInput
+      placeholder="Ingrese el nombre del comercio"
+      type="text"
+      name="nombre"
+      formControlName="nombre"
+    />
+  </mat-form-field>
+
+  <button
+    type="button"
+    class="btn btn-outline-success"
+    color="primary"
+    style="float: right; margin: 2xp"
+    (click)="addItem()"
+  >
+    <span>Grabar</span>
+  </button>
+  <button
+    type="button"
+    class="btn btn-outline-danger"
+    color="warn"
+    style="float: left; margin: 2xp"
+    (click)="cerrar()"
+  >
+    <span>Cancelar</span>
+  </button>
+</mat-dialog-content>
