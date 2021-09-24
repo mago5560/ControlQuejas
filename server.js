@@ -1,15 +1,8 @@
 const express = require('express');
 const path = require('path');
-
-const app = express();
-
-// Serve only the static files form the dist directory
-app.use(express.static(__dirname + '/dist/quejas'));
-
-app.get('/*', function(req,res) {
-    
-res.sendFile(path.join(__dirname+'/dist/quejas/index.html'));
+const ngApp = express();
+ngApp.use(express.static('./dist/quejas'));
+ngApp.get('/*', function (request, response) {
+    response.sendFile(path.join(__dirname, '/dist/quejas/index.html'));
 });
-
-// Start the app by listening on the default Heroku port
-app.listen(process.env.PORT || 8080);
+ngApp.listen(process.env.PORT || 8080);
