@@ -1,0 +1,10 @@
+{
+  "hosting": {
+    "public": "dist/Quejas",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}

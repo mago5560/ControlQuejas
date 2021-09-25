@@ -32,6 +32,7 @@ export class UsuariotecleoComponent implements OnInit {
       telefono: ['', [Validators.required]],
       direccion: ['', [Validators.required]],
       contraseña: ['', [Validators.required]],
+      usuario: ['', [Validators.required]],
       activo:''
     });
 
@@ -41,7 +42,8 @@ export class UsuariotecleoComponent implements OnInit {
       this.frm?.get("apellido")?.setValue( this._data.apellido);   
       this.frm?.get("direccion")?.setValue( this._data.direccion);   
       this.frm?.get("telefono")?.setValue( this._data.telefono);   
-      this.frm?.get("contraseña")?.setValue( this._data.contraseña);   
+      this.frm?.get("contraseña")?.setValue( this._data.contraseña);  
+      this.frm?.get("usuario")?.setValue( this._data.usuario);   
       this.frm?.get("activo")?.setValue( this._data.activo);   
       this.tituloForm ="Modificar Usuario" ;
     }else{
@@ -68,6 +70,7 @@ export class UsuariotecleoComponent implements OnInit {
           direccion:this.frm?.get("direccion")?.value, 
           telefono:this.frm?.get("telefono")?.value, 
           contraseña:this.frm?.get("contraseña")?.value,
+          usuario:this.frm?.get("usuario")?.value,
           activo:true
         }
       

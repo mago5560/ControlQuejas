@@ -44,7 +44,18 @@
     />
   </mat-form-field>
 
-  <mat-form-field appearance="standard" [style.width.%]="100">
+  <mat-form-field appearance="standard" [style.width.%]="100" required>
+    <mat-label>Usuario</mat-label>
+    <input
+      matInput
+      placeholder="Ingrese el telefono"
+      type="text"
+      name="usuario"
+      formControlName="usuario"
+    />
+  </mat-form-field>
+
+  <mat-form-field appearance="standard" [style.width.%]="100" required>
     <mat-label>Contraseña</mat-label>
     <input
       matInput
@@ -54,6 +65,7 @@
       formControlName="contraseña"
     />
   </mat-form-field>
+
   <div style="float: right">
     <mat-slide-toggle name="activo" formControlName="activo">
       Usuario Activo

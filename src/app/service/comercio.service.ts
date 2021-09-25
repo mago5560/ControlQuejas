@@ -31,7 +31,7 @@ import { StorageService } from "./storage.service";
         'Authorization': 'Bearer ' + this.storageService.getCurrentToken()
       })
 
-        return this.http.get<ComercioI>(`${this.url}/${id}`,{ headers: reqHeader });
+        return this.http.get<ComercioI>(`${this.url}?id=${id}`,{ headers: reqHeader });
     }
 
     listarPorMunicipioId(id:number):Observable<ComercioI[]>{

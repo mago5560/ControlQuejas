@@ -28,6 +28,7 @@ import { DialogComponent } from './pages/dialog/dialog.component';
 import { ComercioComponent } from './pages/comercio/comercio.component';
 import { ComerciotecleoComponent } from './pages/comercio/comerciotecleo/comerciotecleo.component';
 import { SucursaltecleoComponent } from './pages/comercio/sucursaltecleo/sucursaltecleo.component';
+import { HomedetalleComponent } from './pages/home/homedetalle/homedetalle.component';
 
 
 @NgModule({
@@ -51,7 +52,8 @@ import { SucursaltecleoComponent } from './pages/comercio/sucursaltecleo/sucursa
     DialogComponent,
     ComercioComponent,
     ComerciotecleoComponent,
-    SucursaltecleoComponent
+    SucursaltecleoComponent,
+    HomedetalleComponent
   ],
   imports: [
     HttpClientModule,

@@ -1,0 +1,27 @@
+<h2 mat-dialog-title style="text-align: center">{{ tituloForm }}</h2>
+<mat-dialog-content>
+  <p>{{ "Telefono: " + _data.telefono }}</p>
+  <p>{{ "Direccion: " + _data.direccion }}</p>
+
+  <p>{{ "Comercio " + nombreComercio }}</p>
+
+  <p>
+    {{ "Encargado: " + nombreEncargado }}
+  </p>
+
+  <p>{{ "Telefono: " + telefonoEncargado }}</p>
+
+  <p>
+    {{ "Ubicacon: " + ubicacion }}
+  </p>
+
+  <button
+    type="button"
+    class="btn btn-outline-danger"
+    color="warn"
+    style="float: left; margin: 2xp"
+    (click)="cerrar()"
+  >
+    <span>Cerrar</span>
+  </button>
+</mat-dialog-content>

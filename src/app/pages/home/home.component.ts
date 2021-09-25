@@ -1,5 +1,6 @@
 import { Component, OnInit, Output, ViewChild,EventEmitter } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
 import { ComercioI } from 'src/app/model/comercioi';
@@ -15,6 +16,7 @@ import { QuejaService } from 'src/app/service/queja.service';
 import { RegionService } from 'src/app/service/region.service';
 import { StorageService } from 'src/app/service/storage.service';
 import { SucursalService } from 'src/app/service/sucursal.service';
+import { HomedetalleComponent } from './homedetalle/homedetalle.component';
 
 @Component({
   selector: 'app-home',
@@ -45,7 +47,9 @@ export class HomeComponent implements OnInit {
   _sourceSucursal:SucursalI[]=[]
 
   constructor(private router: Router,private storageService:StorageService,private service:QuejaService
-    ,private regionService:RegionService ,private departamentoService: DepartamentoService, private municipioService:MunicipioService, private comercioService:ComercioService, private SucursalService:SucursalService
+    ,private regionService:RegionService ,private departamentoService: DepartamentoService, private municipioService:MunicipioService
+    , private comercioService:ComercioService, private SucursalService:SucursalService
+    ,private dialog: MatDialog
     ,  public formBuilder: FormBuilder) { 
     this.storageService.setTitelNavBar("Inicio");
   }
@@ -109,7 +113,16 @@ export class HomeComponent implements OnInit {
   }
 
 
-  openDialogSucursal(data:QuejaI): void{}
+  openDialogSucursal(data:QuejaI): void{
+    const dialogConfig = new MatDialogConfig();
+
+    dialogConfig.disableClose = false;
+    dialogConfig.autoFocus = true;
+    dialogConfig.data = data;
+   
+    const dialogRef = this.dialog.open(HomedetalleComponent, dialogConfig);
+
+  }
 
 
   fillCombo(){
