@@ -89,7 +89,11 @@ export class QuejaComponent implements OnInit {
           this.onResetForm();
         })
   
-  }
+    }else{
+      this.snackBar.open('Todos los campos son requeridos para este proceso.', '', {
+        duration: 4000,
+      });
+    }
     
   }
 
