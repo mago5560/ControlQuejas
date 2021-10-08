@@ -14,3 +14,24 @@ table {
 .item_center {
   vertical-align: middle;
 }
+
+.example-container {
+  position: relative;
+  height: 400px;
+  max-width: 100%;
+  overflow: auto;
+}
+
+@media screen and (max-width: 600px) {
+  table {
+    width: 800px;
+  }
+
+  .example-container {
+    position: relative;
+    height: 400px;
+    width: 450px;
+    max-width: 100%;
+    overflow: auto;
+  }
+}

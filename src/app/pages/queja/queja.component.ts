@@ -46,7 +46,9 @@ export class QuejaComponent implements OnInit {
     , private api : QuejaService
     , private departamentoService: DepartamentoService, private municipioService:MunicipioService, private comercioService:ComercioService, private SucursalService:SucursalService
     , private  datePipe: DatePipe
-    , public formBuilder: FormBuilder) { }
+    , public formBuilder: FormBuilder) { 
+      this.storageService.setTitelNavBar("Realice Su Queja");
+    }
 
   ngOnInit(): void {
     this.frm = this.formBuilder.group({
